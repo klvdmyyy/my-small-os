@@ -1,6 +1,7 @@
 ;; -*- mode: nasm; -*-
 
 global __start					; Это определение точки входа
+global _lgdt
 extern kernel_main				; Вызываем C функцию
 	
 	;; Некоторые константы, объяснение которых здесь должно появиться
@@ -40,3 +41,8 @@ __start:
 	cli
 	hlt
 	jmp 1b
+
+_lgdt:
+	mov eax, [esp + 4]
+	lgdt [eax]
+	ret
