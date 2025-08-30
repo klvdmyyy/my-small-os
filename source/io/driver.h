@@ -1,6 +1,6 @@
 #pragma once
 
-#include "types.h"
+#include <util/types.h>
 
 int fb_write(char *buf, uint32_t len);
 
