@@ -8,7 +8,7 @@ typedef uint16_t fb_t;
 #define FB_COL 80
 #define FB_ROW 25
 
-#define FB_INDEX(x, y) (FB_COL * x + y)
+#define FB_INDEX(x, y) (FB_ROW * y + x)
 #define FRAMEBUFFER(x, y) (*(FB_BASE + FB_INDEX(x, y)))
 
 void fb_move_cursor(int x, int y);
